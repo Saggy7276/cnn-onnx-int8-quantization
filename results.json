@@ -1,0 +1,58 @@
+{
+  "env": {
+    "cpu": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "os": "Windows 11",
+    "onnxruntime": "1.31.1",
+    "test_images": 10000,
+    "timed_runs_per_model": 5000
+  },
+  "models": {
+    "fp32": {
+      "size_kb": 1206.7890625,
+      "top1_acc": 0.8648,
+      "agreement_with_fp32": 1.0,
+      "latency_1_thread": {
+        "mean_ms": 0.9064295199973458,
+        "p50_ms": 0.8971000002020446,
+        "p95_ms": 0.967205000119975
+      },
+      "latency_all_threads": {
+        "mean_ms": 0.3945885599993744,
+        "p50_ms": 0.37579999980152934,
+        "p95_ms": 0.46160500010046235
+      }
+    },
+    "int8": {
+      "size_kb": 330.359375,
+      "top1_acc": 0.8293,
+      "agreement_with_fp32": 0.9078,
+      "top1_acc_exact_arithmetic": 0.865,
+      "latency_1_thread": {
+        "mean_ms": 0.567001979997167,
+        "p50_ms": 0.5580000001828012,
+        "p95_ms": 0.6152250000923233
+      },
+      "latency_all_threads": {
+        "mean_ms": 0.2725136000045495,
+        "p50_ms": 0.25740000000951113,
+        "p95_ms": 0.32350499993754056
+      }
+    },
+    "int8_rr": {
+      "size_kb": 330.359375,
+      "top1_acc": 0.865,
+      "agreement_with_fp32": 0.9887,
+      "top1_acc_exact_arithmetic": 0.865,
+      "latency_1_thread": {
+        "mean_ms": 0.5681931599988275,
+        "p50_ms": 0.5600999998023326,
+        "p95_ms": 0.6188199997723133
+      },
+      "latency_all_threads": {
+        "mean_ms": 0.2661117800049396,
+        "p50_ms": 0.2572500000042055,
+        "p95_ms": 0.3071000001000357
+      }
+    }
+  }
+}
